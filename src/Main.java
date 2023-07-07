@@ -9,6 +9,7 @@ public class Main {
         task2();
         System.out.println("Задача 3");
         task3();
+        System.out.println("Задача 4");
         task4();
     }
 
@@ -49,6 +50,10 @@ public class Main {
         System.out.println();
     }
     public static void task4(){
-
+        List<String> s = new ArrayList<>(List.of("один", "два", "два", "три", "три", "три"));
+        Set<String> d = new HashSet<>(s);
+        for (String x : d) {
+            System.out.println(Collections.frequency(s, x));
+        }
     }
 }
