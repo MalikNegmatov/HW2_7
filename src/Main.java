@@ -1,17 +1,53 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.*;
+
 public class Main {
+
+    public static final List<Integer> ints = new ArrayList<>(List.of(1, 1, 2, 3, 4, 4, 5, 5, 6, 7));
+    public static final List<String> words = new ArrayList<>(List.of("один", "два","два", "три", "три", "три"));
+
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        System.out.println("Задача 1");
+        task1();
+        System.out.println("Задача 2");
+        task2();
+        System.out.println("Задача 3");
+        task3();
+        System.out.println("Задача 4");
+        task4();
+    }
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+    public static void task1(){
+        StringJoiner j = new StringJoiner(", ");
+        for (int i : ints) {
+            if (i % 2 != 0) {
+                j.add(String.valueOf(i));
+            }
+        }
+        System.out.println(j);
+        System.out.println();
+    }
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+    public static void task2(){
+        StringJoiner j = new StringJoiner(", ");
+        Set<Integer> setOfInts = new HashSet<>(ints);
+        for (int i : setOfInts) {
+            if (i % 2 == 0) {
+                j.add(String.valueOf(i));
+            }
+        }
+        System.out.println(j);
+        System.out.println();
+    }
+    public static void task3(){
+        Set<String> setOfWords = new HashSet<>(words);
+        System.out.println(setOfWords);
+        System.out.println();
+    }
+    public static void task4(){
+        List<String> s = new ArrayList<>(words);
+        Set<String> d = new HashSet<>(s);
+        for (String x : d) {
+            System.out.println(Collections.frequency(s, x));
         }
     }
 }
