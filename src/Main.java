@@ -7,6 +7,7 @@ public class Main {
         task1();
         System.out.println("Задача 2");
         task2();
+        System.out.println("Задача 3");
         task3();
         task4();
     }
@@ -37,7 +38,15 @@ public class Main {
         System.out.println();
     }
     public static void task3(){
-
+        String s = ", ";
+        StringJoiner j = new StringJoiner(s);
+        List<String> w = new ArrayList<>(List.of("стол", "стул", "парта", "стул", "сто", "ступа", "стол", "ступа", "сто"));
+        Set<String> setOfWords = new HashSet<>(w);
+        for (String x : setOfWords) {
+            j.add(x);
+        }
+        System.out.println(j);
+        System.out.println();
     }
     public static void task4(){
 
